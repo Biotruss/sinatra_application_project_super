@@ -1,0 +1,18 @@
+<h1>Welcome to the blog <%= @name %>!</h1>
+<h4>Wouldn't you like to <a href="/posts/new">create a post?</a></h4>
+
+<% if @user_posts %>
+<h4>Here are all your posts</h4>
+  <ul>
+  <% @user_posts.each do |post| %>
+    <li><a href="posts/<%=post.id%>"><%= post.title %> </a></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<h4>Here are all the posts</h4>
+<ul>
+<% @posts.each do |post| %>
+  <li><a href="posts/<%=post.id%>"><%= post.title %> </a></li>
+<% end %>
+</ul>
